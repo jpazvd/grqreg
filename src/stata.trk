@@ -1,0 +1,32 @@
+* 00000001
+*! version 1.0.0
+* Do not erase or edit this file
+* It is used by Stata to track the ado and help
+* files you have installed.
+
+S http://fmwww.bc.edu/repec/bocode/g
+N grqreg.pkg
+D  2 Dec 2018
+U 1
+d 'GRQREG': module to graph the coefficients of a quantile regression
+d 
+d grqreg graphs the coefficients of a quantile regression.
+d 
+d KW: quantile regression
+d KW: graphs
+d 
+d Requires: Stata version 8.2
+d 
+d 
+d Author:  Joao Pedro Azevedo, University of Newcastle-upon-Tyne, UK
+d Support: email j.p.azevedo@@ncl.ac.uk
+d 
+d Distribution-Date: 20110317
+d 
+f g\grqreg.ado
+f g\grqreg.hlp
+f _\_bsqregtrace.ado
+f _\_sqregtrace.ado
+f _\_olsci.ado
+f _\_qregtrace.ado
+e
