@@ -77,3 +77,15 @@ grqreg is an rclass program.
 
     Rogers, W. H. (1993) "Calculation of quantile regression standard errors." Stata Technical
         Bulltin, 3: 77-78.
+
+
+## Suggested Citation
+[Joao Pedro Azevedo, 2004. "GRQREG: Stata module to graph the coefficients of a quantile regression," Statistical Software Components S437001, Boston College Department of Economics, revised 17 Mar 2011.](https://ideas.repec.org/c/boc/bocode/s437001.html)
+
+### Handle: RePEc:boc:bocode:s437001 
+
+### Keywords
+quantile regression; graphs;
+
+### Note: 
+This module may be installed from within Stata by typing "ssc install grqreg". Windows users should not attempt to download these files with a web browser.
