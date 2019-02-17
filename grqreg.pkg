@@ -1,0 +1,12 @@
+v 0.0.0
+d 'GRQREG' 
+d 
+d Distribution-Date: 
+d License: MIT
+d 
+F src/g/grqreg.ado
+F src/g/grqreg.hlp
+F src/_/_bsqregtrace.ado
+F src/_/_olsci.ado
+F src/_/_qregtrace.ado
+F src/_/_sqregtrace.ado
