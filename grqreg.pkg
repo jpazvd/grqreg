@@ -1,7 +1,7 @@
-v 0.0.0
-d 'GRQREG' 
+v 2.1
+d 'GRQREG': Stata module to graph the coefficients of a quantile regression
 d 
-d Distribution-Date: 
+d Distribution-Date: 17 March 2011
 d License: MIT
 d 
 F src/g/grqreg.ado
