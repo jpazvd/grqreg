@@ -1,0 +1,179 @@
+. tab foreign, gen(foreign) 
+
+   Car type |      Freq.     Percent        Cum.
+------------+-----------------------------------
+   Domestic |         52       70.27       70.27
+    Foreign |         22       29.73      100.00
+------------+-----------------------------------
+      Total |         74      100.00
+
+. tab rep78, gen(rep78_)
+
+     Repair |
+Record 1978 |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |          2        2.90        2.90
+          2 |          8       11.59       14.49
+          3 |         30       43.48       57.97
+          4 |         18       26.09       84.06
+          5 |         11       15.94      100.00
+------------+-----------------------------------
+      Total |         69      100.00
+
+. 
+. global xlist3 foreign1 rep78_1 rep78_3 rep78_4 rep78_5 mpg weight
+
+. 
+. qreg $ylist $xlist3 , quantile(.1121) vce(robust) baselevels
+Iteration  1:  WLS sum of weighted deviations =  5.4474386
+
+Iteration  1: sum of abs. weighted deviations =  25.036073
+Iteration  2: sum of abs. weighted deviations =  5.8899536
+Iteration  3: sum of abs. weighted deviations =   5.339525
+Iteration  4: sum of abs. weighted deviations =  4.5276173
+Iteration  5: sum of abs. weighted deviations =  4.1166431
+Iteration  6: sum of abs. weighted deviations =   3.624363
+Iteration  7: sum of abs. weighted deviations =  3.4509685
+Iteration  8: sum of abs. weighted deviations =  2.9401871
+Iteration  9: sum of abs. weighted deviations =  2.7041443
+Iteration 10: sum of abs. weighted deviations =  2.6892893
+Iteration 11: sum of abs. weighted deviations =  2.6247496
+Iteration 12: sum of abs. weighted deviations =  2.5989691
+Iteration 13: sum of abs. weighted deviations =  2.5884836
+Iteration 14: sum of abs. weighted deviations =  2.5088703
+Iteration 15: sum of abs. weighted deviations =  2.5088664
+
+.1121 Quantile regression                           Number of obs =         69
+  Raw sum of deviations 3.352709 (about 8.2674494)
+  Min sum of deviations 2.508866                    Pseudo R2     =     0.2517
+
+------------------------------------------------------------------------------
+             |               Robust
+    ln_price |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    foreign1 |  -.2824672   .0837367    -3.37   0.001     -.449909   -.1150254
+     rep78_1 |    .227352   .0616118     3.69   0.000     .1041516    .3505523
+     rep78_3 |   .0679125   .0708919     0.96   0.342    -.0738446    .2096695
+     rep78_4 |   .1845588   .0802062     2.30   0.025     .0241766     .344941
+     rep78_5 |   .2155663   .1189561     1.81   0.075    -.0223011    .4534338
+         mpg |  -.0184686   .0075579    -2.44   0.017    -.0335814   -.0033557
+      weight |   .0001538   .0000597     2.58   0.012     .0000344    .0002732
+       _cons |    8.35778   .2908464    28.74   0.000     7.776196    8.939363
+------------------------------------------------------------------------------
+
+. qreg $ylist $xlist3 , quantile(.2562) vce(robust) baselevels
+Iteration  1:  WLS sum of weighted deviations =  6.1698334
+
+Iteration  1: sum of abs. weighted deviations =  6.2066856
+Iteration  2: sum of abs. weighted deviations =    6.12047
+Iteration  3: sum of abs. weighted deviations =     5.4994
+Iteration  4: sum of abs. weighted deviations =  5.2645703
+Iteration  5: sum of abs. weighted deviations =  5.2026678
+Iteration  6: sum of abs. weighted deviations =   4.999929
+Iteration  7: sum of abs. weighted deviations =  4.8076576
+Iteration  8: sum of abs. weighted deviations =  4.8069298
+Iteration  9: sum of abs. weighted deviations =  4.8068465
+
+.2562 Quantile regression                           Number of obs =         69
+  Raw sum of deviations 6.558408 (about 8.3397398)
+  Min sum of deviations 4.806846                    Pseudo R2     =     0.2671
+
+------------------------------------------------------------------------------
+             |               Robust
+    ln_price |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    foreign1 |   -.341977   .1115977    -3.06   0.003    -.5650576   -.1188964
+     rep78_1 |   .0423206          .        .       .            .           .
+     rep78_3 |    .048169   .1559409     0.31   0.758    -.2635523    .3598904
+     rep78_4 |   .1061359   .1784922     0.59   0.554    -.2506649    .4629368
+     rep78_5 |    .136232   .1739479     0.78   0.437    -.2114849     .483949
+         mpg |   .0008275    .014491     0.06   0.955    -.0281396    .0297945
+      weight |   .0003603   .0001152     3.13   0.003       .00013    .0005906
+       _cons |   7.538407   .5826462    12.94   0.000     6.373714    8.703101
+------------------------------------------------------------------------------
+
+. qreg $ylist $xlist3 , quantile(.4011) vce(robust) baselevels
+Iteration  1:  WLS sum of weighted deviations =  6.6151245
+
+Iteration  1: sum of abs. weighted deviations =  6.7863172
+Iteration  2: sum of abs. weighted deviations =  6.7337049
+Iteration  3: sum of abs. weighted deviations =  6.3983182
+Iteration  4: sum of abs. weighted deviations =  6.2515804
+Iteration  5: sum of abs. weighted deviations =  6.2210777
+Iteration  6: sum of abs. weighted deviations =   6.174156
+Iteration  7: sum of abs. weighted deviations =  6.1738324
+Iteration  8: sum of abs. weighted deviations =  6.1685357
+Iteration  9: sum of abs. weighted deviations =  6.1683545
+
+.4011 Quantile regression                           Number of obs =         69
+  Raw sum of deviations 8.862282 (about 8.4546795)
+  Min sum of deviations 6.168354                    Pseudo R2     =     0.3040
+
+------------------------------------------------------------------------------
+             |               Robust
+    ln_price |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    foreign1 |  -.4930117   .1582999    -3.11   0.003    -.8095519   -.1764716
+     rep78_1 |  -.1122191   .1377734    -0.81   0.419    -.3877141     .163276
+     rep78_3 |  -.0371448   .1094091    -0.34   0.735    -.2559219    .1816323
+     rep78_4 |   .0290209    .153416     0.19   0.851    -.2777534    .3357952
+     rep78_5 |   .0215818   .2069006     0.10   0.917    -.3921416    .4353052
+         mpg |  -.0046212   .0123565    -0.37   0.710    -.0293296    .0200873
+      weight |   .0004228   .0000985     4.29   0.000     .0002258    .0006198
+       _cons |   7.725163   .4997553    15.46   0.000      6.72584    8.724485
+------------------------------------------------------------------------------
+
+. qreg $ylist $xlist3 , quantile(.5232) vce(robust) baselevels
+Iteration  1:  WLS sum of weighted deviations =  6.7958447
+
+Iteration  1: sum of abs. weighted deviations =  6.8588166
+Iteration  2: sum of abs. weighted deviations =  6.7872914
+Iteration  3: sum of abs. weighted deviations =  6.6648395
+
+.5232 Quantile regression                           Number of obs =         69
+  Raw sum of deviations 10.11022 (about 8.5377798)
+  Min sum of deviations  6.66484                    Pseudo R2     =     0.3408
+
+------------------------------------------------------------------------------
+             |               Robust
+    ln_price |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    foreign1 |  -.5487176   .0932672    -5.88   0.000    -.7352168   -.3622185
+     rep78_1 |   .0645521   .1333406     0.48   0.630    -.2020789    .3311831
+     rep78_3 |  -.0155096   .1133294    -0.14   0.892    -.2421257    .2111065
+     rep78_4 |   .0489684   .1192354     0.41   0.683    -.1894575    .2873943
+     rep78_5 |   .0751907   .1523226     0.49   0.623    -.2293972    .3797786
+         mpg |   .0015589   .0116453     0.13   0.894    -.0217272    .0248451
+      weight |   .0004839   .0000915     5.29   0.000      .000301    .0006669
+       _cons |   7.467282   .5005152    14.92   0.000      6.46644    8.468124
+------------------------------------------------------------------------------
+
+. qreg $ylist $xlist3 , quantile(.6106) vce(robust) baselevels
+Iteration  1:  WLS sum of weighted deviations =  6.8154121
+
+Iteration  1: sum of abs. weighted deviations =  6.7905909
+Iteration  2: sum of abs. weighted deviations =   6.786993
+
+.6106 Quantile regression                           Number of obs =         69
+  Raw sum of deviations 10.43622 (about 8.6490984)
+  Min sum of deviations 6.786993                    Pseudo R2     =     0.3497
+
+------------------------------------------------------------------------------
+             |               Robust
+    ln_price |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    foreign1 |  -.5881271   .1810923    -3.25   0.002    -.9502435   -.2260107
+     rep78_1 |   .0713214    .130316     0.55   0.586    -.1892616    .3319044
+     rep78_3 |   .0627545   .0835455     0.75   0.455    -.1043051    .2298142
+     rep78_4 |   .0570218   .1340484     0.43   0.672    -.2110245    .3250682
+     rep78_5 |   .0460545   .1890994     0.24   0.808    -.3320732    .4241822
+         mpg |   .0016507   .0162437     0.10   0.919    -.0308306    .0341319
+      weight |   .0004913   .0001362     3.61   0.001     .0002189    .0007636
+       _cons |   7.477688   .6672161    11.21   0.000     6.143507    8.811869
+------------------------------------------------------------------------------
+
+.  
+. quietly qreg $ylist $xlist3
+
+. 
+. grqreg, cons ci ols olsci

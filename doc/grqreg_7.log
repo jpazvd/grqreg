@@ -1,0 +1,30 @@
+. version 9
+
+. qreg price mpg trunk weight length
+Iteration  1:  WLS sum of weighted deviations =  68803.454
+
+Iteration  1: sum of abs. weighted deviations =  69805.998
+Iteration  2: sum of abs. weighted deviations =   68423.82
+Iteration  3: sum of abs. weighted deviations =  65030.549
+Iteration  4: sum of abs. weighted deviations =  64071.249
+Iteration  5: sum of abs. weighted deviations =  63759.964
+Iteration  6: sum of abs. weighted deviations =  63684.357
+Iteration  7: sum of abs. weighted deviations =  63683.491
+Iteration  8: sum of abs. weighted deviations =  63634.704
+Iteration  9: sum of abs. weighted deviations =  63630.885
+
+Median regression                                   Number of obs =         74
+  Raw sum of deviations  71102.5 (about 4934)
+  Min sum of deviations 63630.88                    Pseudo R2     =     0.1051
+
+------------------------------------------------------------------------------
+       price |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         mpg |  -55.43658   69.82922    -0.79   0.430    -194.7421     83.8689
+       trunk |   72.83793   76.36949     0.95   0.344    -79.51503    225.1909
+      weight |   .7098819   1.013434     0.70   0.486    -1.311863    2.731626
+      length |  -15.38537   36.16137    -0.43   0.672    -87.52533    56.75459
+       _cons |   6005.006   4987.934     1.20   0.233    -3945.651    15955.66
+------------------------------------------------------------------------------
+
+. grqreg weight length, compare

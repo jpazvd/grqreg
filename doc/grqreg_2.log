@@ -1,0 +1,43 @@
+. version 9
+
+. sysuse auto, clear
+(1978 Automobile Data)
+
+. xi: qreg price mpg i.foreign*i.rep78 headroom
+i.foreign         _Iforeign_0-1       (naturally coded; _Iforeign_0 omitted)
+i.rep78           _Irep78_1-5         (naturally coded; _Irep78_1 omitted)
+i.for~n*i.rep78   _IforXrep_#_#       (coded as above)
+note: _IforXrep_1_2 omitted because of collinearity
+note: _IforXrep_1_3 omitted because of collinearity
+Iteration  1:  WLS sum of weighted deviations =  58063.525
+
+Iteration  1: sum of abs. weighted deviations =    66373.4
+Iteration  2: sum of abs. weighted deviations =  55196.982
+Iteration  3: sum of abs. weighted deviations =  54817.673
+note:  alternate solutions exist
+Iteration  4: sum of abs. weighted deviations =   54646.49
+Iteration  5: sum of abs. weighted deviations =  54532.431
+Iteration  6: sum of abs. weighted deviations =  54036.559
+Iteration  7: sum of abs. weighted deviations =  53840.412
+Iteration  8: sum of abs. weighted deviations =   53809.48
+
+Median regression                                   Number of obs =         69
+  Raw sum of deviations    65163 (about 5079)
+  Min sum of deviations 53809.48                    Pseudo R2     =     0.1742
+
+-------------------------------------------------------------------------------
+        price |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+--------------+----------------------------------------------------------------
+          mpg |    -207.56   50.92467    -4.08   0.000      -309.46     -105.66
+  _Iforeign_1 |     100.56   1063.373     0.09   0.925    -2027.245    2228.365
+    _Irep78_2 |     328.92   1309.485     0.25   0.803    -2291.353    2949.193
+    _Irep78_3 |     163.76   1157.782     0.14   0.888    -2152.956    2480.476
+    _Irep78_4 |      181.6   1285.305     0.14   0.888    -2390.289    2753.489
+    _Irep78_5 |    1034.36   1487.782     0.70   0.490    -1942.684    4011.404
+_IforXrep_1_4 |    1469.68   1379.996     1.06   0.291    -1291.686    4231.046
+_IforXrep_1_5 |     825.84   1641.009     0.50   0.617    -2457.811    4109.491
+     headroom |     -149.2   314.8362    -0.47   0.637    -779.1859    480.7859
+        _cons |    9474.84     1724.3     5.49   0.000     6024.524    12925.16
+-------------------------------------------------------------------------------
+
+. grqreg, cons ci ols olsci
