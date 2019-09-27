@@ -1,0 +1,27 @@
+. version 9
+
+. qreg price mpg headroom
+Iteration  1:  WLS sum of weighted deviations =  70255.799
+
+Iteration  1: sum of abs. weighted deviations =  70990.429
+Iteration  2: sum of abs. weighted deviations =  67518.917
+note:  alternate solutions exist
+Iteration  3: sum of abs. weighted deviations =      64777
+Iteration  4: sum of abs. weighted deviations =  64587.083
+Iteration  5: sum of abs. weighted deviations =  64574.074
+Iteration  6: sum of abs. weighted deviations =  64552.093
+Iteration  7: sum of abs. weighted deviations =  64549.833
+
+Median regression                                   Number of obs =         74
+  Raw sum of deviations  71102.5 (about 4934)
+  Min sum of deviations 64549.83                    Pseudo R2     =     0.0922
+
+------------------------------------------------------------------------------
+       price |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         mpg |  -127.3333   29.78595    -4.27   0.000    -186.7248   -67.94183
+    headroom |  -130.6667   205.5906    -0.64   0.527    -540.6027    279.2694
+       _cons |   8272.333   1051.025     7.87   0.000     6176.649    10368.02
+------------------------------------------------------------------------------
+
+. grqreg, cons ci ols olsci title(Fig.1a Fig.1b Fig.1c)
