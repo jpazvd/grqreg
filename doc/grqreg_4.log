@@ -1,0 +1,26 @@
+. version 9
+
+. bsqreg price mpg headroom, reps(100)
+(fitting base model)
+
+Bootstrap replications (100)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
+..................................................    50
+..................................................   100
+
+Median regression, bootstrap(100) SEs               Number of obs =         74
+  Raw sum of deviations  71102.5 (about 4934)
+  Min sum of deviations 64549.83                    Pseudo R2     =     0.0922
+
+------------------------------------------------------------------------------
+       price |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+         mpg |  -127.3333   33.86539    -3.76   0.000     -194.859   -59.80767
+    headroom |  -130.6667   214.2159    -0.61   0.544    -557.8011    296.4677
+       _cons |   8272.333   1146.927     7.21   0.000     5985.426    10559.24
+------------------------------------------------------------------------------
+
+. grqreg, cons ci ols olsci title(Fig.1a Fig.1b Fig.1c)
+
+std error of grqreg will not be the same as one reported after estimation. Please use the 
+&gt; seed option of grqreg.
